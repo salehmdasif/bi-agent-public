@@ -1,6 +1,6 @@
 # BI Agent Platform
 
-> An AI-powered business intelligence platform that lets teams ask questions about their business data in plain English and get answers instantly.
+> 
 
 The BI Agent Platform connects to your marketing, e-commerce, and database sources and puts a conversational AI layer on top of them. Instead of switching between Meta Ads Manager, Shopify, and spreadsheets, users ask questions in a chat window and the agent fetches the data, runs the analysis, and explains the result. For actions like pausing an ad set or writing to a Google Sheet, the agent asks for approval before doing anything.
 
