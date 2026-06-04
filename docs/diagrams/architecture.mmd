@@ -1,0 +1,57 @@
+flowchart TD
+    subgraph UI["UI Layer"]
+        A[Next.js Frontend]
+    end
+
+    subgraph API["API Layer"]
+        B[FastAPI Backend]
+        C[License Middleware]
+        D[Rate Limiter]
+    end
+
+    subgraph Agent["Agent Layer"]
+        E[LangGraph Agent Brain]
+        F[Tool Registry]
+        G[HITL Manager]
+        H[RAG Engine]
+    end
+
+    subgraph Services["Background Services"]
+        I[Celery Worker]
+        J[Celery Beat Scheduler]
+    end
+
+    subgraph Data["Data Layer"]
+        K[(PostgreSQL)]
+        L[(Redis)]
+        M[(ChromaDB)]
+        N[File Storage]
+    end
+
+    subgraph Integrations["External Integrations"]
+        O[Meta Ads API]
+        P[Shopify API]
+        Q[WooCommerce API]
+        R[Google Ads API]
+        S[Google Sheets API]
+        T[Telegram Bot API]
+    end
+
+    A --> B
+    B --> C --> D
+    B --> E
+    E --> F --> G
+    F --> H
+    F --> O & P & Q & R & S
+    B --> K & L
+    I --> K & L & T
+    J --> I
+    H --> M
+    B --> N
+
+    style UI fill:#3B82F6,color:#fff
+    style API fill:#22C55E,color:#fff
+    style Agent fill:#8B5CF6,color:#fff
+    style Services fill:#6B7280,color:#fff
+    style Data fill:#F97316,color:#fff
+    style Integrations fill:#6B7280,color:#fff

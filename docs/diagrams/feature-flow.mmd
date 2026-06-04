@@ -1,0 +1,40 @@
+sequenceDiagram
+    actor User
+    participant FE as Next.js Frontend
+    participant API as FastAPI Backend
+    participant Auth as Auth Middleware
+    participant Agent as LangGraph Agent
+    participant Tools as Tool Registry
+    participant DS as Data Source API
+    participant DB as PostgreSQL
+
+    User->>FE: Types question in chat
+    FE->>API: POST /api/v1/chat/message
+    API->>Auth: Validate JWT token
+    Auth-->>API: User identity confirmed
+    API->>DB: Load AI settings + user permissions
+    DB-->>API: Settings and allowed modules
+    API->>Agent: run_agent(user_id, message, allowed_modules)
+
+    loop Agentic Loop (max iterations)
+        Agent->>Tools: LLM selects tool and args
+        Tools->>DS: Fetch data (Meta Ads / Shopify / DB / etc.)
+        DS-->>Tools: Raw API response
+        Tools-->>Agent: Formatted JSON result
+        Note over Agent: If HITL signal detected, break loop
+    end
+
+    Agent->>DB: Save conversation and assistant message
+    Agent-->>API: Response (content, chart_data, pending_action)
+    API-->>FE: JSON response
+    FE-->>User: Render message + inline chart
+
+    opt HITL action pending
+        FE-->>User: Show approval card
+        User->>FE: Click Approve
+        FE->>API: POST /api/v1/chat/approve/{action_id}
+        API->>DS: Execute approved action
+        DS-->>API: Confirmation
+        API-->>FE: Updated message
+        FE-->>User: Action confirmed
+    end

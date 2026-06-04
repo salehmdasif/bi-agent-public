@@ -1,0 +1,30 @@
+PORTFOLIO AND DEMONSTRATION LICENSE
+
+Copyright 2026 Abu Salah Mohammad Asif. All rights reserved.
+
+This repository is published solely for portfolio and demonstration purposes.
+
+The code contained in this repository is skeleton/placeholder code. It does
+not represent the production implementation of the BI Agent Platform. All
+proprietary business logic, algorithms, AI prompts, security implementations,
+and competitive advantage logic have been removed and replaced with interface
+definitions and NotImplementedError stubs.
+
+PERMISSIONS:
+  - You may view, read, and reference this repository for evaluation, learning,
+    and inspiration purposes.
+  - You may use the ideas, concepts, and approaches demonstrated here to build
+    your own original work, provided it is not a direct copy.
+
+RESTRICTIONS:
+  - You may not copy, reproduce, or replicate substantial portions of this code
+    as-is into your own projects or products.
+  - You may not redistribute, sublicense, or sell this code in original or
+    modified form without explicit written permission from the author.
+  - You may not use this code to build a product or service that directly
+    competes with or replicates the BI Agent Platform.
+  - You may not copy this code into another repository and represent it as
+    original work.
+
+Portfolio: https://asif.ravelweb.com
+LinkedIn: linkedin.com/in/salehmdasif

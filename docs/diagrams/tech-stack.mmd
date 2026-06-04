@@ -1,0 +1,46 @@
+flowchart TB
+    subgraph UI["UI Layer"]
+        A["Next.js 14 — server-rendered UI"]
+        B["TypeScript — type safety"]
+        C["Tailwind CSS — styling"]
+        D["Plotly.js — interactive charts"]
+    end
+
+    subgraph API["API Layer"]
+        E["FastAPI — async REST API"]
+        F["Pydantic — request validation"]
+        G["SlowAPI — rate limiting"]
+    end
+
+    subgraph AgentLayer["Agent Layer"]
+        H["LangGraph — agentic loop"]
+        I["LangChain — tool use"]
+        J["Claude / GPT — LLM backend"]
+    end
+
+    subgraph ServiceLayer["Service Layer"]
+        K["Celery — background tasks"]
+        L["Celery Beat — scheduling"]
+        M["Weasyprint — PDF generation"]
+    end
+
+    subgraph DataLayer["Data Layer"]
+        N["PostgreSQL 16 — relational store"]
+        O["SQLAlchemy 2.0 — async ORM"]
+        P["Redis 7 — cache and queue"]
+        Q["ChromaDB — vector store"]
+    end
+
+    subgraph Infra["Infrastructure Layer"]
+        R["Docker — containerization"]
+        S["Docker Compose — orchestration"]
+        T["Nginx — proxy and TLS"]
+        U["Sentry — error monitoring"]
+    end
+
+    UI --> API
+    API --> AgentLayer
+    API --> ServiceLayer
+    AgentLayer --> DataLayer
+    ServiceLayer --> DataLayer
+    DataLayer --> Infra

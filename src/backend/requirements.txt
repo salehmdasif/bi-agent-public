@@ -1,0 +1,77 @@
+# Core Framework
+fastapi==0.115.5
+uvicorn[standard]==0.32.1
+
+# Database
+sqlalchemy[asyncio]==2.0.36
+alembic==1.14.0
+asyncpg==0.30.0
+
+# Cache and Queue
+redis==5.2.0
+celery[redis]==5.4.0
+
+# Auth and Security
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+bcrypt==4.0.1
+python-multipart==0.0.17
+cryptography==43.0.3
+
+# Settings and Env
+pydantic==2.10.3
+pydantic-settings==2.6.1
+email-validator==2.2.0
+python-dotenv==1.0.1
+
+# Email
+aiosmtplib==3.0.2
+jinja2==3.1.4
+
+# HTTP Client
+httpx==0.28.1
+
+# File Handling
+python-magic==0.4.27
+pillow==11.0.0
+openpyxl==3.1.5
+PyMuPDF==1.24.14
+python-docx==1.1.2
+
+# AI and Agent
+langchain==0.3.12
+langgraph==0.2.59
+langchain-anthropic==0.3.1
+langchain-openai==0.2.12
+chromadb==0.5.23
+
+# PDF Generation
+weasyprint==62.3
+
+# Charts
+plotly==5.24.1
+kaleido==0.2.1
+
+# Error Monitoring
+sentry-sdk[fastapi]==2.19.2
+
+# Utilities
+python-slugify==8.0.4
+
+# Data Source Connectors
+aiomysql==0.2.0
+google-auth==2.35.0
+google-api-python-client==2.154.0
+anthropic==0.41.0
+openai==1.57.0
+
+# SQL Safety
+sqlglot==25.24.0
+
+# Rate Limiting
+slowapi==0.1.9
+
+# Testing
+pytest==8.3.4
+pytest-asyncio==0.24.0
+pytest-mock==3.14.0

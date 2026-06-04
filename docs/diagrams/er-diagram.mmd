@@ -1,0 +1,22 @@
+erDiagram
+    User ||--o{ Conversation : "has"
+    User ||--o{ UserPermission : "has"
+    User ||--o{ APIToken : "generates"
+    User ||--o{ UploadedFile : "uploads"
+    User ||--o{ ActivityLog : "generates"
+    User ||--o{ Invitation : "sends"
+    User ||--o{ PasswordReset : "requests"
+    User ||--o{ Insight : "receives"
+
+    Conversation ||--o{ Message : "contains"
+    Conversation ||--o{ PendingAction : "has"
+
+    Module ||--o{ UserPermission : "governs"
+
+    DataSourceCredential ||--o{ JobRun : "triggers"
+
+    Alert ||--o{ JobRun : "monitored_by"
+    Threshold ||--o{ Alert : "defines"
+
+    License ||--|| DeploymentConfig : "paired_with"
+    AISettings ||--|| DeploymentConfig : "configures"
